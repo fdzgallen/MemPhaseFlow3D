@@ -149,14 +149,12 @@ def compute_multiplier_2(A0,Area):
 def compute_multiplier_volume(V0,Volume):
     return  beta * (Volume - V0) 
 
-
 #Lagrange Multiplier for create interphase
 def compute_multiplier_global2_withoutflow(gradphi,grad_lapmu,grad_laparea,mask):
     sigma_N2 = M*np.sum(gradphi[0][mask]*grad_lapmu[0][mask]+gradphi[1][mask]*grad_lapmu[1][mask]+gradphi[2][mask]*grad_lapmu[2][mask])
     sigma_D = ((2.0**0.5)*3.0*eps/4.0)*M*np.sum(gradphi[0][mask]*grad_laparea[0][mask]+gradphi[1][mask]*grad_laparea[1][mask]+gradphi[2][mask]*grad_laparea[2][mask])
     sigma = (sigma_N2)/sigma_D 
     return sigma
-
 
 #Lagrange Multiplier during temporal evolution of phi
 def compute_multiplier_global2(gradphi,grad_lapmu,grad_laplapphi,v_x,v_y,v_z,mask):
@@ -166,7 +164,6 @@ def compute_multiplier_global2(gradphi,grad_lapmu,grad_laplapphi,v_x,v_y,v_z,mas
     sigma_D = ((2.0**0.5)*3.0*eps/4.0)*M*np.sum(gradphi[0][mask]*grad_laplapphi[0][mask]+gradphi[1][mask]*grad_laplapphi[1][mask]+gradphi[2][mask]*grad_laplapphi[2][mask])
     sigma = (sigma_N1+sigma_N2)/sigma_D 
     return sigma
-
 
 #Computing viscosity
 def compute_visco(phi,mask):

@@ -11,6 +11,14 @@ This is the code used in the peer-review article "Vorticity-Stream vector formul
 
 Modifying the code as explained in the article you can simulate multiple flows: Poiseuille, Couette, temporal-dependent etc. Here we will provide a few versions of the code so you can simulate different systems without issue, but playing with the code to explore new possibilities is encouraged.
 
+# Initial conditions
+There are three possible shapes defined inside the code for the deformable object in the initial conditions:
+- Elipsoid shape
+- Rotated elipsoid shape
+- Spheroid shape
+  
+Originally uploaded using elipsoid shape, this can be changed by commenting/uncommenting the lines of code in the Initial Conditions section of the code.
+
 # Input
 
 
@@ -24,3 +32,4 @@ In case there is interest on analysing more in depth the evolution of the system
 # How does it work?
 
 The details of the mathematical model can be read in the article.
+
